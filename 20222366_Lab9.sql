@@ -14,4 +14,5 @@ CREATE TABLE stf_puzzle_sv (
 
 
 INSERT INTO stf_puzzle_sv (id, stf_game_board_structure, image) VALUES
-  ('1',  '1234567X', NULL);
+  ('1',  '13652847X', NULL);
+  
