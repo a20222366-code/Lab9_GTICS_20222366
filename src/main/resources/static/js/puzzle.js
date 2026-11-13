@@ -1,6 +1,6 @@
 // ===================== Constantes =====================
 const API = '/api/puzzle';
-const IMAGEN_DEFECTO = '/imagenes_lab09_pruebas/Bulbasaur.png';
+const IMAGEN_DEFECTO = '/imagenes_lab09_pruebas/imagenes_lab09_pruebas/Bulbasaur.png';
 const SIMBOLOS = '123456789ABCDEFGHIJKLMNOPQRSTUVWYZabcdefghijklmnopqrstuvwxyz'; // sin la X
 const VACIO = 'X';
 
