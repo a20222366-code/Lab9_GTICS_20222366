@@ -1,8 +1,7 @@
 package org.example.lab9_gtics_20222366.controller;
 
-
-import org.example.lab9_gtics_20222366.entity.PuzzleSv;
 import org.example.lab9_gtics_20222366.repository.PuzzleSvRepository;
+import org.example.lab9_gtics_20222366.entity.PuzzleSv;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +23,7 @@ public class PuzzleController {
     public ResponseEntity<HashMap<String, Object>> obtener (){
 
         HashMap<String, Object> respuesta= new HashMap <> ();
-        Optional<PuzzleSv> opt = repo.findBy(1);
+        Optional<PuzzleSv> opt = repo.findById(1);
 
         if (opt.isPresent()){
 
@@ -48,7 +47,7 @@ public class PuzzleController {
     public ResponseEntity<HashMap<String, Object>> guardarEstructura (@RequestBody PuzzleSv body){
 
         HashMap<String, Object> respuesta= new HashMap <> ();
-        Optional<PuzzleSv> opt = repo.findBy(1);
+        Optional<PuzzleSv> opt = repo.findById(1);
 
 
         if (opt.isPresent() && body.getStfGameBoardStructure() != null){
@@ -58,20 +57,53 @@ public class PuzzleController {
             puzzle.setStfGameBoardStructure(body.getStfGameBoardStructure());
 
             repo.save(puzzle);
-            
-            respuesta.put("estado", "ok");
-            respuesta.put("puzzle", opt.get());
+
+            respuesta.put("estado", "actualizado");
+
 
             return ResponseEntity.ok(respuesta);
 
         }
 
+        respuesta.put("estado", "error");
+        respuesta.put("msg", "Envie la estructura del tablero");
 
 
-
-
+        return ResponseEntity.badRequest().body(respuesta);
 
     }
+
+
+    @PutMapping("/imagen")
+    public ResponseEntity<HashMap<String, Object>> guardarImagen (@RequestBody PuzzleSv body){
+
+        HashMap<String, Object> respuesta= new HashMap <> ();
+        Optional<PuzzleSv> opt = repo.findById(1);
+
+
+        if (opt.isPresent() && body.getImage() != null){
+
+            PuzzleSv puzzle = opt.get();
+
+            puzzle.setImage(body.getImage());
+
+            repo.save(puzzle);
+
+            respuesta.put("estado", "actualizado");
+
+
+            return ResponseEntity.ok(respuesta);
+
+        }
+
+        respuesta.put("estado", "error");
+        respuesta.put("msg", "Envie la imagen");
+
+
+        return ResponseEntity.badRequest().body(respuesta);
+
+    }
+
 
 
 
