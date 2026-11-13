@@ -1,35 +1,33 @@
 <!DOCTYPE html>
-<html lang="es"
-      xmlns:th="http://www.thymeleaf.org">
-
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Stf Puzzle</title>
-
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stf-Puzzle Simplified Version</title>
+    <link rel="stylesheet" th:href="@{/css/puzzle.css}">
 </head>
-
-
 <body>
 
+<h2>Stf-Puzzle Simplified Version</h2>
 
-<h2>Stf Puzzle</h2>
+<div id="panelConfig" class="caja">
+    <img id="imgPrevia" src="/imagenes_lab09_pruebas/Bulbasaur.png" alt="Imagen del puzzle">
 
-<div id=" caja">
-    <button id="btnSeleccionar">Seleccionar</button>
-    <button id="btnIniciar">Iniciar</button>
+    <div class="fila">
+        <input type="color" id="colorTablero" value="#ffffff" title="Color del tablero">
+        <input type="text" id="txtDimension" placeholder="3x3" autocomplete="off">
+    </div>
+    <div id="errDimension" class="error"></div>
 
+    <input type="file" id="fileImagen" accept=".jpg,.jpeg,image/jpeg" hidden>
+    <button type="button" id="btnSeleccionar" class="btn">Seleccionar Personaje</button>
 
-    <p>Pagina</p>
-
-
+    <button type="button" id="btnIniciar" class="btn" hidden>Iniciar el juego</button>
 </div>
 
 <div id="tablero"></div>
 <div id="mensaje"></div>
 
+<script th:src="@{/js/puzzle.js}"></script>
 </body>
-
 </html>
-

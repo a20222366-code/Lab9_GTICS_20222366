@@ -1,0 +1,9 @@
+Estado inicial: 13652847X
+Paso 1: clic en la ficha 8 -> 13652X478
+Paso 2: clic en la ficha 6 -> 13X526478
+Paso 3: clic en la ficha 3 -> 1X3526478
+Paso 4: clic en la ficha 2 -> 1235X6478
+Paso 5: clic en la ficha 5 -> 123X56478
+Paso 6: clic en la ficha 4 -> 123456X78
+Paso 7: clic en la ficha 7 -> 1234567X8
+Paso 8: clic en la ficha 8 -> 12345678X  (Juego terminado !)
